@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" dir="rtl">
+  <div class="container">
+    <div>
+      <button mat-icon-button>
+        <mat-icon>school</mat-icon>
+      </button>
+      <a class="navbar-brand" href="#">فاينال </a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto d-flex align-items-center">
+      <li class="nav-item active"*ngIf="userData?.role=='doctor'">
+        <a class="nav-link" routerLink="/new-exam">اختبار جديد </a>
+      </li>
+      <li class="nav-item" *ngIf="userData?.role=='doctor'">
+        <a class="nav-link" routerLink="/students">الطلاب</a>
+      </li>
+      <li class="nav-item" *ngIf="userData!==null">
+        <a class="nav-link" routerLink="/subjects">المواد</a>
+      </li>
+      <li *ngIf="userData==null"class="nav-item">
+        <a class="nav-link"routerLink="/login">دخول</a>
+      </li>
+     <li *ngIf="userData==null" class="nav-item">
+        <a class="nav-link" routerLink="/register">تسجيل</a>
+      </li>
+      <li  *ngIf="userData!==null"class="nav-item">
+        <a class="nav-link" (click)="logout()" routerLink="/login">خروج</a>
+      </li>
+      <li *ngIf="userData!==null" class="nav-item m-2 username" >{{userData?.username}}
+      </li>
+    </ul>
+
+  </div>
+  </div>
+</nav>

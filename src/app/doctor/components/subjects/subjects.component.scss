@@ -1,0 +1,20 @@
+.subjects{
+  mat-card-title {
+    text-align: center;
+    color:#e56768;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  .mat-card {
+    box-shadow: 0px 1px 0px 0px rgba(0, 78, 127,.2);
+  }
+  .show{
+    background-color:#6A5AE0;
+    color: #fff;
+    
+  }
+  .delete{
+    background-color: #E6E6E6;
+  }
+}

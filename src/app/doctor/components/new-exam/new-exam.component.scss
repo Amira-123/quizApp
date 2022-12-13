@@ -1,0 +1,45 @@
+.newExam{
+  .addSubject{
+    width:30%;
+    ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #e5e7e7;
+    }
+  }
+  .questions{
+    width: 75%;
+    margin: auto;
+  }
+  .displayQuestions{
+    h2{
+      background-color: #004E7F;
+      padding: 4px 0px;
+      width: 40%;
+      margin: 15px auto;
+      border-radius: 8px;
+      color:#eae3e3;
+      font-size:25px;
+      font-family: 'Tajawal', sans-serif;
+    }
+    .examBox{
+      padding: 2px 5px;
+      border-bottom: 1px solid rgb(194, 192, 192);
+      background-color: #daecec;
+      span{
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media (max-width:800px){
+  .newExam{
+    .questions{
+      width:100%;
+    }
+   .displayQuestions{
+    h2{
+      width:90%;
+    }
+   }
+
+  }
+}

@@ -1,0 +1,32 @@
+<div class="loginForm w-75 m-auto">
+  <div class="text-center form-title m-auto ">
+    <h2>دخول الى الحساب</h2>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="getLoginData()">
+    <div class="row mt-4">
+      <div class="col-md-12 my-2 d-flex align-items-end">
+        <mat-radio-group (change)="getRole($event)" formControlName="type">
+          <mat-radio-button value="doctor" class="role ml-3"> دكتور</mat-radio-button>
+          <mat-radio-button value="students"  class="role"> طالب</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" color="warn">
+          <mat-label>الأيميل</mat-label>
+          <input matInput  type="email" formControlName="email">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" color="warn">
+          <mat-label> كلمه المرور</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="col-md-12 btnRegister d-flex justify-content-between align-items-center">
+      <a routerLink="/register" >انشاء حساب ؟</a>
+      <button class="btn" type="submit" [disabled]="!loginForm.valid" >تسجيل الدخول</button>
+    </div>
+  </form>
+</div>

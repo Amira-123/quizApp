@@ -1,0 +1,70 @@
+@mixin  commonStyle {
+  color: #eae3e3;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Tajawal', sans-serif;
+}
+.registerForm{
+  padding-top: 2rem;
+  .form-title{
+    background-color: #004E7F;
+    padding: 4px 0px;
+    border-radius: 4px;
+    width: 50%;
+  
+    h2{
+      color:#eae3e3;
+      font-size:25px;
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+    }
+  }
+  form{
+    mat-form-field {
+      width: 100%;
+
+    }
+
+    .btnRegister{
+      a{
+        @include commonStyle;
+        cursor: pointer;
+        text-decoration: none;
+        color: #004E7F;
+        font-weight: 600;
+      }
+      button{
+        background-color: #004E7F;
+         padding: 5px 15px;
+        @include commonStyle;
+        &:focus{
+          box-shadow: none;
+        }
+      }
+    }
+
+  }
+
+::ng-deep .mat-form-field-wrapper{
+  margin: 0;
+}
+
+}
+/////////media query
+@media (max-width:800px){
+  .registerForm{
+    .form-title{
+      width: 100% !important;
+    }
+    form{
+      .btnRegister{
+        flex-direction: column;
+        button{
+          margin-top:15px;
+        }
+      }
+
+    }
+  }
+}
+

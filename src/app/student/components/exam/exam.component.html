@@ -1,0 +1,48 @@
+<div class="content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>اختبار {{subject?.subjectName}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngFor="let question of subject?.questions;let index=index" >
+      <h4 class="text-right">سؤال {{index+1}}: {{question.question}}</h4>
+      <div class="row">
+        <div class="col-md-6 text-right">
+          <mat-radio-button  *ngIf="role?.role=='students' && !showResult && validExam" value="{{question.answerA}}" name="{{index}}" (change)="getcheckedAnswer($event)"> </mat-radio-button>
+          <label>A- {{question.answerA}} </label>
+        </div>
+        <div class="col-md-6 text-right">
+          <mat-radio-button  *ngIf="role?.role=='students'&& !showResult && validExam" value="{{question.answerB}}" name="{{index}}" (change)="getcheckedAnswer($event)">  </mat-radio-button>
+          <label>B- {{question.answerB}}</label>
+
+        </div>
+        <div class="col-md-6 text-right">
+          <mat-radio-button *ngIf="role?.role=='students' &&!showResult &&validExam" value="{{question.answerC}}" name="{{index}}" (change)="getcheckedAnswer($event)"> </mat-radio-button>
+          <label>C- {{question.answerC}}</label>
+
+        </div>
+        <div class="col-md-6 text-right">
+          <mat-radio-button  *ngIf="role?.role=='students' &&!showResult &&validExam" value="{{question.answerD}}" name="{{index}}" (change)="getcheckedAnswer($event)"> </mat-radio-button>
+          <label>D- {{question.answerD}}</label>
+
+        </div>
+      </div>  
+        <div *ngIf="role?.role=='doctor'">
+          <button  mat-button class="btn btn-danger"(click)="deleteQuestion(index)">حذف</button>
+        </div>
+
+    
+    </mat-card-content>
+
+    <mat-card-actions>
+      <div *ngIf="role?.role=='students'" class="text-center">
+        <span  class="result"*ngIf="showResult || !validExam"> النتيجه: {{total}}/{{subject?.questions.length}}</span>
+        <button *ngIf="!showResult && validExam"class="btn btn-success "(click)="getResult()">النتيجه</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+  
+</div>
+
+
+
+

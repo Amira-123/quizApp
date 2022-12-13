@@ -1,0 +1,18 @@
+<div class="subjects mt-4">
+  <div class="row">
+     <div class="col-xl-3 col-md-6 mb-4" *ngFor="let subject of allSubjects;let index=index" >
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{subject.subjectName}}</mat-card-title>
+        </mat-card-header>
+      <mat-card-actions>
+          <button mat-button *ngIf="role?.role=='doctor'" routerLink="/exam/{{subject.id}}" class="show">عرض</button>
+          <button mat-raised-button  *ngIf="role?.role=='doctor'"(click)="deleteSubject(index)" class="delete">حذف</button>
+          <button mat-button *ngIf="role?.role!=='doctor'" routerLink="/exam/{{subject.id}}" class="show">بدأ الاختبار</button>
+      </mat-card-actions>
+      </mat-card>
+     </div>
+  
+   
+  </div>
+</div>

@@ -1,0 +1,53 @@
+@mixin tableStyle {
+  display:block;
+  width:100%;
+}
+table {
+  width: 100%;
+  tr{
+    text-align: initial;
+  }
+  .mat-header-cell {
+    background: rgba(0, 78, 127,.6);
+    color:aliceblue;
+    font-size: 15px; 
+    font-weight: 600;
+}
+}
+
+@media (max-width:900px){
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-table .mat-cell:first-child {
+    margin-top: 5%;
+   
+  } 
+    table {
+      th{
+        display: none;
+      }
+      
+     
+      td{
+        @include tableStyle;
+       margin-bottom: 13px;
+        &::before{
+          content:attr(data-label);
+          position:absolute;
+           left:0px;
+          width:50%;
+          padding-left:15px;
+          font-weight:600;
+          font-size:14px;
+          color: rgb(0, 78, 127);
+          
+        }
+      }
+    }
+
+    
+}
+
+
+

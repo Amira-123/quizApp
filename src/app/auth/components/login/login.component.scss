@@ -1,0 +1,71 @@
+@mixin  commonStyle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  
+}
+.loginForm{
+  padding-top: 2rem;
+   .form-title{
+     background-color: #004E7F;
+     padding: 4px 0px;
+     border-radius: 4px;
+     width:50%;
+
+     h2{
+       color:#fff;
+       font-size:25px;
+      font-family: 'Tajawal', sans-serif;
+      margin-bottom: 0;
+     }
+   }
+   form{
+     mat-form-field {
+       width: 100%;
+       margin: 1rem 0 .5rem;
+     }
+    
+     .role{
+       color:#333;
+       font-weight: 500;
+       font-size: 20px;
+       font-family: 'Tajawal', sans-serif;
+     }
+
+     .btnRegister{
+      a{
+        @include commonStyle;
+        cursor: pointer;
+        text-decoration: none;
+        color: #004E7F;
+        font-weight: 600;
+      }
+      button{
+        background-color: #004E7F;
+        padding: 5px 15px;
+        @include commonStyle;
+        &:focus{
+          box-shadow: none;
+        }
+      }
+    }
+  }
+ }
+
+@media (max-width:800px){
+  .loginForm{
+    .form-title{
+      width: 100% !important;
+    }
+    form{
+      .btnRegister{
+        flex-direction: column;
+        button{
+          margin-top:15px;
+        }
+      }
+
+    }
+  }
+}
+
